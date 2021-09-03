@@ -1,3 +1,5 @@
+mod back_of_house;
+
 mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() { println!("Compiled!"); }
@@ -31,25 +33,34 @@ pub fn eat_appetizer() {
     println!("Appetizer: {:?}", order1);
 }
 
-mod back_of_house {
-    pub struct Breakfast {
-        pub toast: String,
-        seasonal_fruit: String,
-    }
 
-    impl Breakfast {
-        pub fn summer(toast: &str) -> Breakfast {
-            Breakfast {
-                toast: String::from(toast),
-                seasonal_fruit: String::from("peaches"),
-            }
+// use `use`
+
+mod foo {
+    pub mod bar {
+        pub fn baz() { println!("called baz"); }
         }
-    }
 
-    fn fix_incorrect_order() {
-        cook_order();
-        super::serve_order();
+    pub mod bar2 {
+        pub fn baz2() { println!("baz2"); }
     }
-
-    fn cook_order() {}
 }
+
+// `use` can be used with absolute and relative path
+// use crate::foo::bar;
+use self::foo::bar;
+
+pub fn call_baz() {
+    bar::baz();
+}
+
+// Hashmap
+use std::collections::HashMap;
+
+fn test_hash_map() {
+    let mut x = HashMap::new();
+    x.insert(1,2);
+}
+
+// re exporting: external code can use bar2 as if bar2 is in their scope
+pub use self::foo::bar2;
