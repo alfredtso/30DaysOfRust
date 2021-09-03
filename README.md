@@ -1,0 +1,2 @@
+# 30DaysofRust
+Learn amap
