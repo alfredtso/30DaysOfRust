@@ -1,4 +1,3 @@
-mod back_of_house;
 
 mod front_of_house {
     pub mod hosting {
@@ -13,9 +12,10 @@ pub fn eat_at_restaurant() {
     // Relative Path
     front_of_house::hosting::add_to_waitlist();
 
-    let mut meal = back_of_house::Breakfast::summer("Rye");
-    meal.toast = String::from("wheat");
-    println!("I'd like {:?} toast please", meal.toast);
+    //
+    //let mut meal = back_of_house::food::Breakfast::summer("Rye");
+    //meal.toast = String::from("wheat");
+    //println!("I'd like {:?} toast please", meal.toast);
 }
 
 fn serve_order() {}
