@@ -32,4 +32,22 @@ fn main() {
     let s6 = s4 + &s5;
     println!("s6 is {} and add operator second arg is slice str", s6);
 
+    // for more string we need & to all except the first
+    let s7 = String::from("tic");
+    let s8 = String::from("tac");
+    let s9 = String::from("toe");
+
+    let s10 = s7 + "-" + &s8 + "-" + &s9;
+    println!("s10 is {}", s10);
+    // or use
+    // let s10 = format!("{}-{}-{}", s1, s2, s3);
+
+    // the strings should contain 4 "characters"
+    for c in "नमस्ते".chars() {
+        println!("{}", c);
+    }
+
+    for b in "नमस्ते".bytes() {
+        println!("{}", b);
+    }
 }
