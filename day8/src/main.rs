@@ -3,6 +3,13 @@ use std::env;
 
 use day8::Config;
 
+/// Like a grep
+///
+/// # Examples
+/// ```
+/// let query = "rUsT"
+/// ```
+
 fn main() {
     let args: Vec<String> = env::args().collect();
 
